@@ -3,14 +3,12 @@ body {
   font-family: Arial, sans-serif;
 
   /* Background image setup */
-  background: url("background.jpg") no-repeat center center fixed;
+  background: url("background.jpg") no-repeat center center;
   background-size: cover;
 
-  /* Optional: make text readable if bg is bright */
   color: #fff;
 }
 
-/* optional: add a semi-transparent overlay on top of background */
 body::before {
   content: "";
   position: fixed;
@@ -18,23 +16,25 @@ body::before {
   left: 0;
   width: 100%; 
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* darkens background */
-  z-index: -1; /* keeps it behind everything */
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
+/* Container spacing */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 40px; /* increased gap between images */
   transition: transform 0.3s ease-in-out;
 }
 
+/* Image size */
 img {
-  max-width: 450px;
-  width: 100%;
-  height: auto;
+  width: 350px;      /* smaller width */
+  height: 250px;     /* smaller height */
   border-radius: 8px;
+  object-fit: cover; /* keeps aspect ratio, fills box */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -43,16 +43,3 @@ img:focus {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
-
-h1 {
-  font-family: "Papyrus", "Copperplate", fantasy;
-  font-size: 2.5rem;
-  border-bottom: 2px solid pink;
-  border-right: 2px solid pink;
-  width: fit-content;
-  margin: 20px auto;
-  padding: 10px 20px;
-  text-align: center;
-  box-shadow: 4px 4px 5px #888;
-}
-
