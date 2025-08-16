@@ -1,14 +1,32 @@
 body {
   margin: 10px 0 0;
   font-family: Arial, sans-serif;
-  background-color: #fff;
+
+  /* Background image setup */
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  /* Optional: make text readable if bg is bright */
+  color: #fff;
+}
+
+/* optional: add a semi-transparent overlay on top of background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* darkens background */
+  z-index: -1; /* keeps it behind everything */
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* replaces image margin for cleaner spacing */
+  gap: 20px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -37,3 +55,4 @@ h1 {
   text-align: center;
   box-shadow: 4px 4px 5px #888;
 }
+
